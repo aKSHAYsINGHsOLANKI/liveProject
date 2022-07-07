@@ -1,0 +1,177 @@
+ <!DOCTYPE html>
+            <html lang="en">
+              <center>
+            
+                                      <head>
+                                      <meta charset="utf-8">
+                                      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                                      <meta http-equiv="x-ua-compatible" content="ie=edge">
+                                      <title></title>
+                                      <!-- Font Awesome -->
+                                      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+                                      <!-- Bootstrap core CSS -->
+                                      <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+                                      <!-- Material Design Bootstrap -->
+                                      <link href="/stylesheets/mdb.min.css" rel="stylesheet">
+                                      <!-- Your custom styles (optional) -->
+                                      <link href="/stylesheets/style.min.css" rel="stylesheet">
+                                      <style type="text/css">
+                                        html,
+                                        body,
+                                        header,
+                                        .view {
+                                          height: 100%;
+                                        }
+                                    
+                                        @media (max-width: 740px) {
+                                          html,
+                                          body,
+                                          header,
+                                          .view {
+                                            height: 1000px;
+                                          }
+                                        }
+                                    
+                                        @media (min-width: 800px) and (max-width: 850px) {
+                                          html,
+                                          body,
+                                          header,
+                                          .view {
+                                            height: 650px;
+                                          }
+                                        }
+                                        @media (min-width: 800px) and (max-width: 850px) {
+                                                  .navbar:not(.top-nav-collapse) {
+                                                      background: #1C2331!important;
+                                                  }
+                                              }
+                                      </style>
+                                    </head>
+                                    
+                                    <body>
+                                      <center>
+                                        <div class="col-md-6 col-xl-5 mb-4">
+                                    
+                                                <!--Card-->
+                                                <div class="card" style="margin-top:5px">
+                                    
+                                                  <!--Card content-->
+                                                  <div class="card-body">
+                                                      
+                                                        <% if(data.length==0){%>
+                                                          <h3>Record Not Found.....</h3>
+                                                          <%} else { %>
+                                    
+                                                    <!-- Form -->
+                                                    <form action='/course/editcourse' method='post'>
+                                                      <!-- Heading -->
+                                                      <h3 class="dark-grey-text text-center">
+                                                        <strong><b><i>COURSE  INFORMATION</i></b></strong>
+                                                      </h3>
+                                                      <hr>
+                                                      
+                                                   
+                        
+                                                   
+                                                    
+                                                             <div class="container">
+                                                               <div class="md-form">
+                                                                <label for="text">Course-Id</label>
+                                                                      <div class="col-xl-5">
+                                                                            <input type="number"  name='courseid'  value='<%=data[0].courseid%>' >
+                                                                            
+                                                                      </div>
+                                                                    </div>
+                                                                    
+
+                                                                      <div class="md-form">
+                                                                            <label for="text">Course Name</label>
+                                                                              <div class="col-xl-5">
+                                                                                  <input type="text"  name='coursename'    value='<%=data[0].coursename%>'>
+                                                                              </div>
+                                                                              
+                                                                      </div>
+                                                            
+                                                 
+
+                                                                              <div class="md-form"> 
+                                                                                 <label for="text">Added On</label>             
+                                                                                 <div class="col-xl-5"> 
+                                                                                  <input type="date" name='addedon'  value='<%=data[0].addedon%>' >
+                                                                                 </div>
+                                                                          </div>
+                                                    
+                                                                         <div class="md-form">  
+                                                                           <label for="text">Last Update </label>            
+                                                                                <div class="col-xl-5">
+                                                                                  <input type="date"  name='lastupdate' value='<%=data[0].lastupdate%>' >
+                                                                                </div>
+                                                       
+                                                                            </div>
+                                                      
+                                                     
+                                                                                 <div class="md-form">
+                                                                                      <label for="text">Added By</label>
+                                                                                       <div class="col-xl-5">
+                                                  
+                                                                                          <input type="text"  name='addedby' value='<%=data[0].addedby%>' >
+                                                                                       </div>
+                                                    
+                                                                                  </div>   
+                                                
+                                                     
+                                                    
+                                                          
+                                                        
+                                                          
+                                                                 <div class="text-center" ><button class="btn btn-success" value="Update" name="btn">Update</button><button class="btn btn-indigo" value="delete" name="btn">Delete</button>
+                                                                  </div>
+                                                                
+                                                        
+                                                         
+                                                              
+                                                            </form>
+                                                          </div>
+                                                         
+                                                        </div>
+                                                  <%}%> 
+                                                
+                                      
+                                                
+                                    
+                                    
+                                  
+                                              
+                                            
+                                            
+                                               
+                                      
+
+                                                    <!-- Form -->
+                                                  
+                                                 
+                                                 
+                                                  
+                                                 
+                                                 <!--/.Card-->
+                                    
+                                               
+                                                      </center>                      
+                            <script type="text/javascript" src="/javascripts/jquery-3.3.1.min.js"></script>
+                      <!-- Bootstrap tooltips -->
+                      <script type="text/javascript" src="/javascripts/popper.min.js"></script>
+                      <!-- Bootstrap core JavaScript -->
+                      <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+                      <!-- MDB core JavaScript -->
+                      <script type="text/javascript" src="/javascripts/mdb.min.js"></script>
+                      <!-- Initializations -->
+                      <script type="text/javascript">
+                      // Animations initialization
+                      new WOW().init();
+                      </script>
+                      </body>
+                    </center>   
+                      </html>
+                      
+                      
+                          

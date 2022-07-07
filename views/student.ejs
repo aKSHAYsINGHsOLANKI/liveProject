@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<script src="/javascripts/js/jquery-3.3.1.min.js"></script>
+                       <script src="/javascripts/js/fill.js"></script>
+                       <script>
+                         function getDate(){
+    var today = new Date();
+
+document.getElementById("currentdate").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+
+
+}
+                        </script>
+<html>
+  <head>
+    <title>DATABASE</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body><center>
+    <form action="/student/addstudent" method="post" enctype="multipart/form-data" >
+       
+        <table cellspacing='10'>
+            <caption><b><i></i></b></caption>
+              
+              
+              <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <title></title>
+                <!-- Font Awesome -->
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+                <!-- Bootstrap core CSS -->
+                <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+                <!-- Material Design Bootstrap -->
+                <link href="/stylesheets/mdb.min.css" rel="stylesheet">
+                <!-- Your custom styles (optional) -->
+                <link href="/stylesheets/style.min.css" rel="stylesheet">
+                <style type="text/css">
+                  html,
+                  body,
+                  header,
+                  .view {
+                    height: 100%;
+                  }
+              
+                  @media (max-width: 740px) {
+                    html,
+                    body,
+                    header,
+                    .view {
+                      height: 1000px;
+                    }
+                  }
+              
+                  @media (min-width: 800px) and (max-width: 850px) {
+                    html,
+                    body,
+                    header,
+                    .view {
+                      height: 650px;
+                    }
+                  }
+                  @media (min-width: 800px) and (max-width: 850px) {
+                            .navbar:not(.top-nav-collapse) {
+                                background: #1C2331!important;
+                            }
+                        }
+                </style>
+              </head>
+              
+              <body>
+              
+               <div class="col-md-6 col-xl-5 mb-4">
+              
+                          <!--Card-->
+                          <div class="card">
+              
+                            <!--Card content-->
+                            <div class="card-body">
+              
+                              <!-- Form -->
+                              <form name="">
+                                  <h3 class="dark-grey-text text-center">
+                                  <strong>Student Information:</strong>
+                                </h3>
+                                <hr>
+              
+                                <div class="md-form">
+                                  <i class="fas fa-user prefix grey-text" style="margin-left:-260px"></i>
+                                  <input type="text" id="form3" name='studentname' class="form-control" required>
+                                  <label for="form3">Student Name</label>
+                                </div>
+
+                                <div class="md-form">
+                                 
+                                  
+                        
+                                  <input type="radio"  name='gender' value='Male' >Male 
+                                  <input type='radio' name='gender' value='Female' >Female
+                                                <label for="form2">Gender</label>
+                                              </div>
+                                              
+                                
+                                                    
+                                <div class="md-form">
+                                 
+                                  <input type="number" name='mobileno' required>
+                                  <label for="form2" >  Mobile No</label> 
+                                </div>
+                                
+                                
+                                <div class="md-form">
+                                  
+                                    <div class="col-mb-6">
+                                  <input type="text" name='collegename'>
+                                  <label for="form2">College Name</label>
+                                </div>
+                              </div>
+                                
+                              
+                              
+                              <div class="md-form" >
+                                
+                                <label for="sel1">Semester</label>
+                                
+                                <select class="col-lg-4" id="sel1" name="semester">
+                                   
+                                  <option>Select</option>
+                                  <option>I</option>
+                                  <option>II</option>
+                                  <option>III</option>
+                                  <option>IV</option>
+                                  <option>V</option>
+                                  <option>VI</option>
+                                  <option>VII</option>
+                                  <option>VIII</option>
+                                </select>
+                                </div>
+                              
+                                <div class="md-form" >
+                                
+                                  <label for="sel1">Branch</label>
+                                  
+                                  <select class="col-lg-4" id="sel1" name="branch">
+                                     
+                                    <option>Select</option>
+                                    <option>MCA</option>
+                                    <option>IT</option>
+                                    <option>CS</option>
+                                    
+                                  </select>
+                                  </div>
+                            
+                              
+                            
+                                <div class="md-form">
+                                  
+                                  <select class="form-control"  id="courses"     name="courseid" >
+                                    <option>Course Name</option>
+                                    
+                                  </select>
+                                </div>
+
+                                <div class="md-form">
+                                  
+                                  <select class="form-control"  id="batch"     name="batchid" >
+                                    <option>Batch Name</option>
+                                    
+                                  </select>
+                                </div>
+                                
+                                <div class="col">
+                                    <label for="date">Current Date</label>
+                                    <input type="date" onclick="getDate()" class="form-control" id="currentdate" 
+                                      name="currentdate">
+                                </div>
+                                
+                          
+
+
+                                
+                                  <div class="md-form">
+                                      <input type="file"   name='picture' id="picture" required>
+                                       <label for="form3"> Picture</label>
+                                     </div>
+                                     <div class="text-center">
+                                        <button class="btn btn-grey">Submit</button> 
+                                        <div class="alert alert-success">  
+                                          <label for="form12"style="">MESSAGE:<%=msg%></label> 
+                                       </div>
+                                      
+                              </form>
+                              <!-- Form -->
+                            </center>              
+                            </div>
+                           
+                          </div>
+                          <!--/.Card-->
+              
+                        </div>
+              
+      <script type="text/javascript" src="/javascripts/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="/javascripts/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="/javascripts/mdb.min.js"></script>
+<!-- Initializations -->
+<script type="text/javascript">
+// Animations initialization
+new WOW().init();
+
+</script>
+</body>
+
+</html>

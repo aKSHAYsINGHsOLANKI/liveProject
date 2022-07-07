@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+            <html lang="en">
+              <center><!-- 
+                <script src="/javascripts/js/jquery-3.3.1.js"></script>
+                <script src="/javascripts/js/fill.js"></script> -->
+                                      <head>
+                                      <meta charset="utf-8">
+                                      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                                      <meta http-equiv="x-ua-compatible" content="ie=edge">
+                                      <title></title>
+                                      <!-- Font Awesome -->
+                                      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+                                      <!-- Bootstrap core CSS -->
+                                      <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+                                      <!-- Material Design Bootstrap -->
+                                      <link href="/stylesheets/mdb.min.css" rel="stylesheet">
+                                      <!-- Your custom styles (optional) -->
+                                      <link href="/stylesheets/style.min.css" rel="stylesheet">
+                                      <style type="text/css">
+                                        html,
+                                        body,
+                                        header,
+                                        .view {
+                                          height: 100%;
+                                        }
+                                    
+                                        @media (max-width: 740px) {
+                                          html,
+                                          body,
+                                          header,
+                                          .view {
+                                            height: 1000px;
+                                          }
+                                        }
+                                    
+                                        @media (min-width: 800px) and (max-width: 850px) {
+                                          html,
+                                          body,
+                                          header,
+                                          .view {
+                                            height: 650px;
+                                          }
+                                        }
+                                        @media (min-width: 800px) and (max-width: 850px) {
+                                                  .navbar:not(.top-nav-collapse) {
+                                                      background: #1C2331!important;
+                                                  }
+                                              }
+                                      </style>
+                                    </head>
+                                    
+                                    <body>
+                                    
+                                     <div class="col-md-6 col-xl-5 mb-4">
+                                    
+                                                <!--Card-->
+                                                <div class="card" style="margin-top:10px">
+                                    
+                                                  <!--Card content-->
+                                                  <div class="card-body">
+                                                      
+                                                        <% if(data.length==0){%>
+                                                          <h3>Record Not Found.....</h3>
+                                                          <%} else { %>
+                                    
+                                                    <!-- Form -->
+                                                    <form action='/batch/editbatches' method='post'>
+                                                      <!-- Heading -->
+                                                      <h3 class="dark-grey-text text-center">
+                                                        <strong><b><i>BATCH INFORMATION</i></b></strong>
+                                                      </h3>
+                                                      <hr>
+                                                      
+                                                     
+                                                        <div class="container">
+                                                            <div class="md-form">
+                                                                 <div class="row">
+                                                                     <div class="col-xl-5">
+                                                                
+                                                                        <input type="number"  name='batchid' class="form-control" value='<%=data[0].batchid%>' >
+                                                                               <label for="form3">Batch-Id:</label>
+                                                                              </div>
+                                                                              
+                                                                            <div class="col-md-6">
+                                                                              
+                                                                              <select class="form-control" name="courseid" id="courses"   value='<%=data[0].coursename%>' >
+                                                                                <option value="<%=data[0].coursename%>"><%=data[0].coursename%></option>
+                                                                                
+                                                                                
+                                                                              </select>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>                                                                      
+                                                                         </div>
+                                                                  
+                                                                
+                                        
+                                                                            
+                                                                         
+                                                                        <div class="md-form">
+                                                                                <div class="col-md-6">                                                       
+                                                                                <input type="text" name='batchdate' class="form-control" value='<%=data[0].batchdate%>'></div>
+                                                                                <label for="form2">Batch date:</label>
+                                                                              
+                                                                              </div>
+
+                                                                              
+                                                                                  <div class="md-form">
+                                                                                    <div class="col-md-6">                                                       
+                                                                                    <input type="text" name='batchname' class="form-control" value='<%=data[0].batchname%>'></div>
+                                                                                    <label for="form2">Batch Name:</label>
+                                                                                  
+                                                                                  </div>
+
+
+
+
+
+
+                                                                                  <div class="form-group" id="sel1" name="batchtime">
+                                                                                      <label for="sel1">Batch Time</label></div>
+
+                                                                                  <div class="container">
+                                                                                      <div class="row">
+                                                                                          <div class='col-sm-2'>
+                                                                                              <div class="form-group">
+                                                                                                  <div class='input-group date' id='fromtime' >
+                                                                                                      <input type='text' class="form-control" name="fromtime"value='<%=data[0].fromtime%>'/>
+                                                                                                      <span class="input-group-addon">
+                                                                                                          <span class="glyphicon glyphicon-time"></span>
+                                                                                                      </span>
+                                                                                                  </div>
+                                                                                              </div>
+                                                                                          </div>
+                                                                                          
+                                                                                      </div>
+                                                                                  </div>
+                                                                                  
+                                                                                  <div class="container">
+                                                                                      <div class="row">
+                                                                                          <div class='col-sm-2'  style="
+                                                                                          margin-left: 165px">
+                                                                                              <div class="form-group">
+                                                                                                  <div class='input-group date' id='totime'>
+                                                                                                      <input type='text' class="form-control" name="totime" value='<%=data[0].totime%>'/>
+                                                                                                      
+                                                                                                      <span class="input-group-addon">
+                                                                                                          <span class="glyphicon glyphicon-time"></span>
+                                                                                                          
+                                                                                                      </span>
+                                                                                                      
+                                                                                                  </div>
+                                                                                                  
+                                                                                              </div>
+                                                                                              
+                                                                                          </div>
+                                                                                          
+                                                                                      </div>
+                                                                                     
+                                                                                      
+                                                                                        
+                                                                                      </div>
+                                                                                  
+                                                                                  <div class="md-form">
+                                                                                        <div class="col-md-6">                                                       
+                                                                                        <input type="text" name='batchdays' class="form-control" value='<%=data[0].batchdays%>'></div>
+                                                                                        <label for="form2">Batch type:</label>
+                                                                                      
+                                                                                      </div>
+
+                                                                                      <div class="md-form">
+                                                                                            <div class="col-md-6">
+                                                                                        <input type="text" id="form8" name='addedon'class="form-control" value='<%=data[0].addedon%>' class="md-textarea"></div>
+                                                                                        <label for="form8" >Added On:</label>
+                                                                                      
+                                                                                      </div>
+
+                                                                          <div class="md-form">
+                                                                              <div class="col-md-6">
+                                                                          <input type="text" id="form8" name='addedby'class="form-control" value='<%=data[0].addedby%>' class="md-textarea"></div>
+                                                                          <label for="form8" >Added By:</label>
+                                                                        
+                                                                        </div>
+                                                                    
+              
+                                                                          <div class="md-form">
+                                                                              <div class="col-md-6">
+                                                                           <input type="date"  name='lastupdate'class="form-control" value='<%=data[0].lastupdate%>' ></div>
+                                                                            <label for="form8"> Last Update:</label>
+                                                                          </div>
+                                                                        
+                                                                      
+                                                                     
+                                                                  
+                                                        
+                                                        <%
+                                                        var d=new Date(data[0].currentdate)
+                                                       if(d.getMonth()>=9)
+                                                        mp=''
+                                                      else
+                                                        mp='0'
+                        
+                                                      if(d.getDate()>=9)
+                                                      dp=''
+                                                      else
+                                                       dp='0'
+                        
+                                                     bd=d.getFullYear()+"-"+(mp+(d.getMonth()+1))+"-"+(dp+d.getDate());
+                        
+                                                       %>
+                                                       
+                                                      
+
+                                                      
+
+                                                    
+
+
+                                                      <%
+                                                      var d=new Date(data[0].updateon)
+                                                      if(d.getMonth()>=9)
+                                                      mp=''
+                                                      else
+                                                      mp='0'
+                                                      
+                                                      if(d.getDate()>=9)
+                                                      dp=''
+                                                      else
+                                                      dp='0'
+                                                      
+                                                      bo=d.getFullYear()+"-"+(mp+(d.getMonth()+1))+"-"+(dp+d.getDate());
+                                                      
+                                                      %>
+
+
+                                                     
+                                                      
+                                                              <div class="md-form">
+                                                              <div class="row">
+                                                               <div class="col-md-6" ><button class="btn btn-black" value="Update" name="btn">Update</button><button class="btn btn-red" value="delete" name="btn">Delete</button>
+                                                                   </div>
+                                                          </div>
+                                                          </form>
+                                                        </div>
+                                                          </div>
+
+                                                        
+
+                                                    
+                                                
+                                                  <%}%> 
+                                                    
+                                                    <!-- Form -->
+                                                  
+                                                  
+                                                 
+                                                 <!--/.Card-->
+                                    
+              
+                                    
+                            <script type="text/javascript" src="/javascripts/jquery-3.3.1.min.js"></script>
+                      <!-- Bootstrap tooltips -->
+                      <script type="text/javascript" src="/javascripts/popper.min.js"></script>
+                      <!-- Bootstrap core JavaScript -->
+                      <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+                      <!-- MDB core JavaScript -->
+                      <script type="text/javascript" src="/javascripts/mdb.min.js"></script>
+                      <!-- Initializations -->
+                      <script type="text/javascript">
+                      // Animations initialization
+                      new WOW().init();
+                      </script>
+                      </body>
+                        </center>        
+                      </html>
+                      
+                      
+<link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+
+
+<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+
+
+
+<script type="text/javascript">
+  $(function () {
+      $('#fromtime').datetimepicker({
+          format: 'LT'
+      });
+  });
+
+  $(function () {
+      $('#totime').datetimepicker({
+          format: 'LT'
+      });
+  });
+</script>

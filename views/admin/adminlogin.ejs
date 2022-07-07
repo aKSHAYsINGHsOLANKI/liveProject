@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="">
+    
+    <title>:: FeeManagement:: Sign In</title>
+    <!-- Favicon-->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="/ui/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/ui/assets/css/style.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    
+    <style>
+
+            img.bg {
+                  
+            
+                    /* Set up proportionate scaling */
+                    width: 100%;
+                    height: auto;
+            
+                    /* Set up positioning */
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+            }
+            
+            h1 {
+                font-family: 'Chelsea Market', cursive;
+                color: #FFF;
+                font-size: 90px;
+                text-align: center;
+                line-height: 95px;
+                font-weight: normal;
+                margin-top: 350px;
+                text-shadow: 5px 5px 5px #000;
+            }
+            
+            @media screen and (max-width: 1024px) { /* Specific to this particular image */
+                    img.bg {
+                            left: 50%;
+                            margin-left: -512px;   /* 50% */
+                    }
+            }
+            
+            html, body {
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 12px;
+                line-height: 16px;
+                padding: 0;
+                margin: 0;
+                color: #333;
+            }
+            
+            .bar {
+                background-color: #111;
+                color: #f0f0f0;
+                box-shadow: 0px 0px 2px #333;
+                line-height: 25px;
+                padding: 0px 20px;
+                opacity: 0.7;
+            }
+            .bar:hover {
+                opacity: 1;
+            }
+            .bar a {
+                color: #DDD;
+            }
+            .bar a:hover {
+                color: #FFFFFF;
+            }
+            
+            a { color: #CCC; text-decoration: none; }
+            a:hover { color: #FFFFFF; }
+            
+                #canvas {
+                    border: 1px solid black;
+                    position: absolute;
+                    z-index: 10000;
+                }
+            
+                #flake {
+                    color: #fff;
+                    position: absolute;
+                    font-size: 25px;
+                    top: -50px;
+                }
+            
+                #page {
+                    position: relative;
+                }
+            
+            </style>
+          
+</head>
+
+        <body class="theme-blush" style="background: url(/ui/bgt.jpg) center top no-repeat;">
+
+                <div class="authentication">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-12">
+                              <form action="/admin/checklogin" method="POST" class="card auth_form">
+                               
+                                    <div class="header">
+                                        <img class="" src="/ui/assets/images/1.png" alt="">
+                                        <h5>Log in</h5>
+                                    </div>
+                                    <div class="body">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" name="adminid" placeholder="Admin ID">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="zmdi zmdi-account-circle"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <input type="password" class="form-control" name="password" placeholder="Password">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><a href="#" class="forgot" title="Forgot Password"><i class="zmdi zmdi-lock"></i></a></span>
+                                            </div>
+                                        </div>
+                                        <div class="checkbox">
+                                          
+                                        </div>
+                                        <button  class="btn btn-primary btn-block waves-effect waves-light" >SIGN IN</button>
+                                        <div class="signin_with mt-3">
+                                            <p class="mb-0"></p>
+                                            <strong><%=msg%></strong>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="copyright text-center">
+                                    &copy;
+                                    <script>document.write(new Date().getFullYear())</script>,
+                                    <span>Designed by <a href="#" target="_blank">NIS</a></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-sm-12">
+                                <div class="card">
+                                    <img src="/ui/assets/images/signin.svg" alt="Sign In"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jquery Core Js -->
+                <script src="/ui/assets/bundles/libscripts.bundle.js"></script>
+                <script src="/ui/assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+                </body>
+                </html>
+
+
+
+
+
+

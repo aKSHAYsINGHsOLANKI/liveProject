@@ -1,0 +1,237 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+              <center>
+            
+                                      <head>
+                                      <meta charset="utf-8">
+                                      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                                      <meta http-equiv="x-ua-compatible" content="ie=edge">
+                                      <title></title>
+                                      <!-- Font Awesome -->
+                                      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+                                      <!-- Bootstrap core CSS -->
+                                      <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+                                      <!-- Material Design Bootstrap -->
+                                      <link href="/stylesheets/mdb.min.css" rel="stylesheet">
+                                      <!-- Your custom styles (optional) -->
+                                      <link href="/stylesheets/style.min.css" rel="stylesheet">
+                                      <style type="text/css">
+                                        html,
+                                        body,
+                                        header,
+                                        .view {
+                                          height: 100%;
+                                        }
+                                    
+                                        @media (max-width: 740px) {
+                                          html,
+                                          body,
+                                          header,
+                                          .view {
+                                            height: 1000px;
+                                          }
+                                        }
+                                    
+                                        @media (min-width: 800px) and (max-width: 850px) {
+                                          html,
+                                          body,
+                                          header,
+                                          .view {
+                                            height: 650px;
+                                          }
+                                        }
+                                        @media (min-width: 800px) and (max-width: 850px) {
+                                                  .navbar:not(.top-nav-collapse) {
+                                                      background: #1C2331!important;
+                                                  }
+                                              }
+                                      </style>
+                                    </head>
+                                    
+                                    <body>
+                                    
+                                     <div class="col-md-6 col-xl-5 mb-4">
+                                    
+                                                <!--Card-->
+                                                <div class="card" style="margin-top:10px">
+                                    
+                                                  <!--Card content-->
+                                                  <div class="card-body">
+                                                      
+                                                        <% if(data.length==0){%>
+                                                          <h3>Record Not Found.....</h3>
+                                                          <%} else { %>
+                                    
+                                                    <!-- Form -->
+                                                    <form action='/new/editusername' method='post'>
+                                                      <!-- Heading -->
+                                                      <h3 class="dark-grey-text text-center">
+                                                        <strong><b><i>USER  INFORMATION</i></b></strong>
+                                                      </h3>
+                                                      <hr>
+                                                      
+                                                     
+                                                        <div class="container">
+                                                            <div class="md-form">
+                                                                 <div class="row">
+                                                                     <div class="col-xl-5">
+                                                                
+                                                                        <input type="number"  name='loginid' class="form-control" value='<%=data[0].loginid%>' >
+                                                                               <label for="form3">Login-Id</label>
+                                                                              </div>
+                                                                              <div class="col-md-6">
+                                                                
+                                                                                <input type="text" id="form3" name='username' class="form-control"   value='<%=data[0].username%>'>
+                                                                                 <label for="form3">User Name</label>
+                                                                            </div>
+                                                                      
+                                                                          </div>
+                                                                        </div>                                                                      
+                                                                         </div>
+                                                                  
+                                                                
+                                                                          <div class="form-group">
+                                                                     <label for="sel1">User type</label>
+                                                                       <select class="form-control" id="sel1" name="usertype">
+                                                                         <option><%=data[0].usertype%></option>
+                                                                           <option>admin</option>
+                                                                            <option>user</option>
+                                                            
+                                                                        </select>
+                                                                        </div>
+                                        
+                                                                      <div class="md-form">
+                                                                          <div class="col-md-6">                                                       
+                                                                          <input type="date" name='currentdate' class="form-control" value='<%=data[0].currentdate%>'></div>
+                                                                          <label for="form2">Current Date</label>
+                                                                        
+                                                                        </div>
+                                                    
+                                                                          <div class="md-form">
+                                                                              <div class="col-md-6">
+                                                                          <input type="text" id="form8" name='addby'class="form-control" value='<%=data[0].addby%>' class="md-textarea"></div>
+                                                                          <label for="form8" >Add By</label>
+                                                                        
+                                                                        </div>
+                                                                    
+              
+                                                                          <div class="md-form">
+                                                                              <div class="col-md-6">
+                                                                           <input type="date"  name='updateon'class="form-control" value='<%=data[0].updateon%>' ></div>
+                                                                            <label for="form8"> Last Update</label>
+                                                                          </div>
+                                                                        
+                                                                      
+                                                                     
+                                                                  
+                                                        
+                                                        <%
+                                                        var d=new Date(data[0].currentdate)
+                                                       if(d.getMonth()>=9)
+                                                        mp=''
+                                                      else
+                                                        mp='0'
+                        
+                                                      if(d.getDate()>=9)
+                                                      dp=''
+                                                      else
+                                                       dp='0'
+                        
+                                                     bd=d.getFullYear()+"-"+(mp+(d.getMonth()+1))+"-"+(dp+d.getDate());
+                        
+                                                       %>
+                                                       
+                                                      
+
+                                                      
+
+                                                    
+
+
+                                                      <%
+                                                      var d=new Date(data[0].updateon)
+                                                      if(d.getMonth()>=9)
+                                                      mp=''
+                                                      else
+                                                      mp='0'
+                                                      
+                                                      if(d.getDate()>=9)
+                                                      dp=''
+                                                      else
+                                                      dp='0'
+                                                      
+                                                      bo=d.getFullYear()+"-"+(mp+(d.getMonth()+1))+"-"+(dp+d.getDate());
+                                                      
+                                                      %>
+                                                      <div class="container">
+                                                          <table>
+                                                            <tr>
+                                                              <td>
+                 
+                                                                  <div class="col-md-3">
+                                                                     <div class="md-form">
+                                                                        <form action='/new/updatepicture' method='post' enctype="multipart/form-data">
+                                                                                  <br><br><br>
+                                                                                                <input type='hidden'name='loginid' value='<%=data[0].loginid%>'>
+                                                                                              <img src='http://localhost:3000/images/<%=data[0].picture%>' width='300' height='300'><br><br>
+                                                                                             <input type='file' name='picture'><br><br>
+                                                                                              <button class="btn-btn-indigo" name="btn" value='Update Picture'>Update Picture</button>
+                                                                                             
+                                                                                           
+                                                                        </form>
+                                                                           
+                                                                     </div>
+                                                                   </div>
+                                                               </td>
+                                                     
+                                                                          
+                                                            </tr>        
+                                                                
+                                                                            
+                                                            
+                                                           </table>
+                                                             
+                                                         </div>
+                                                      
+                                                              <div class="md-form">
+                                                              <div class="row">
+                                                               <div class="col-md-6" ><button class="btn btn-success" value="Update" name="btn">Update</button><button class="btn btn-indigo" value="delete" name="btn">Delete</button>
+                                                                   </div>
+                                                          </div>
+                                                          </form>
+                                                        </div>
+                                                          </div>
+
+                                                        
+
+                                                    
+                                                
+                                                  <%}%> 
+                                                    
+                                                    <!-- Form -->
+                                                  
+                                                  
+                                                 
+                                                 <!--/.Card-->
+                                    
+              
+                                    
+                            <script type="text/javascript" src="/javascripts/jquery-3.3.1.min.js"></script>
+                      <!-- Bootstrap tooltips -->
+                      <script type="text/javascript" src="/javascripts/popper.min.js"></script>
+                      <!-- Bootstrap core JavaScript -->
+                      <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+                      <!-- MDB core JavaScript -->
+                      <script type="text/javascript" src="/javascripts/mdb.min.js"></script>
+                      <!-- Initializations -->
+                      <script type="text/javascript">
+                      // Animations initialization
+                      new WOW().init();
+                      </script>
+                      </body>
+                        </center>        
+                      </html>
+                      
+                      
+                          
